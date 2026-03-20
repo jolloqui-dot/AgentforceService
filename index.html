@@ -7,7 +7,7 @@
 <body>
   <p>This is a simple test for Agentforce Service Agent,</p>
 	<p>now deployed</p>
-	<p>Hidden variable : France</p>
+	<p>Hidden variable : France,  </p>
   <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -27,6 +27,22 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+
+    //Passing Web Context to Prechat - BEGIN
+    var sCustomerID = "France";
+        
+    window.addEventListener("onEmbeddedMessagingReady", e => {
+        //log event
+        console.log("onEmbeddedMessagingReady event triggered");
+        
+        //Set invisible prechat field
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+            "Customer_ID" : sCustomerID
+        });
+    });
+    //Passing Web Context to Prechat - END
+
+	  
 </script>
 <script type='text/javascript' src='https://orgfarm-a23ed1a952-dev-ed.develop.my.site.com/ESWTestAgentforceServic1774021321823/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
