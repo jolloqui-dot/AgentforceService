@@ -28,28 +28,28 @@
 	};
 
     //Passing Web Context to Prechat - BEGIN
-//  Selection for slightly simpler version of code
-//    var Pays = "France";
+  Selection for slightly simpler version of code
+    var Pays = "France";
         
-//    window.addEventListener("onEmbeddedMessagingReady", e => {
+    window.addEventListener("onEmbeddedMessagingReady", e => {
         //log event
-//        console.log("onEmbeddedMessagingReady event triggered");
+        console.log("onEmbeddedMessagingReady event triggered");
         
         //Set invisible prechat field
-//        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-//            "Pays" : Pays
-//        });
-//    });
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+            "Pays" : Pays
+        });
+    });
     //Passing Web Context to Prechat - END
 
 
-window.addEventListener("onEmbeddedMessagingReady", e => {
-    console.log("Received the onEmbeddedMessagingReady event…");
+//window.addEventListener("onEmbeddedMessagingReady", e => {
+//    console.log("Received the onEmbeddedMessagingReady event…");
 
     // Send data to Salesforce
 	//embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Example1" : "Content1", "Example2" : "Content2"});
-    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Pays" : "Mexico"});
-});
+//    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({"Pays" : "Mexico"});
+//});
 	  
 	  
 </script>
