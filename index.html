@@ -33,7 +33,6 @@
 	};
 
     //Passing Web Context to Prechat - BEGIN
-    var Name = "";
 	          
     window.addEventListener("onEmbeddedMessagingReady", e => {
         console.log("onEmbeddedMessagingReady event triggered");  //log event
@@ -43,18 +42,15 @@
             // List the pre-chat field names with the value and whether
             // it's editable in the pre-chat form.
             "Name": {
-              "value": Name,
+              "value": "Defaulted Name",
               "isEditableByEndUser": true
             }
         });
-
-
-
 		
         //Set invisible prechat field
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 
-			"Pays" : "FR"  
-		});		//for new hidden variables, add with a comma within the curly brackets - is a dictionary type
+			"Pays" : "FR"
+		});
 	});
     //Passing Web Context to Prechat - END
 	  
