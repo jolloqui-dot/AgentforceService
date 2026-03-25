@@ -10,6 +10,9 @@
 	<p>Hidden variable : Pays = FR </p>
 	<p>Mapped into flow's Country </p>
 	<p>v1.1 working OK</p>
+	<p>Hidden variable Commented out </p>
+	<p>Value FR added at Flow level </p>
+	<p>v2.0 working OK</p>
 	
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
@@ -30,15 +33,15 @@
 	};
 
     //Passing Web Context to Prechat - BEGIN
-    window.addEventListener("onEmbeddedMessagingReady", e => {
-        console.log("onEmbeddedMessagingReady event triggered");  //log event
+    //window.addEventListener("onEmbeddedMessagingReady", e => {
+    //    console.log("onEmbeddedMessagingReady event triggered");  //log event
 
         //Set invisible prechat field
-        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 
-			"Pays" : "FR"
-		});
+    //    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 
+	//		"Pays" : "FR"
+	//	});
 				
-	});
+	//});
     //Passing Web Context to Prechat - END
 
 </script>
