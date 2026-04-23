@@ -20,14 +20,14 @@
 	</ul>
 	
 <script type='text/javascript'>
-	function initEmbeddedMessaging() {
+		function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
 			embeddedservice_bootstrap.init(
 				'00DKI000000H1IP',
-				'Sephora_Service_Helper',
-				'https://beautynet--agentbot.sandbox.my.site.com/ESWSephoraServiceHelper1774355936348',
+				'FR_MSG',
+				'https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSG1775405801968',
 				{
 					scrt2URL: 'https://beautynet--agentbot.sandbox.my.salesforce-scrt.com'
 				}
@@ -36,7 +36,6 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
-
     //Passing Web Context to Prechat - BEGIN
     //window.addEventListener("onEmbeddedMessagingReady", e => {
     //    console.log("onEmbeddedMessagingReady event triggered");  //log event
@@ -50,7 +49,7 @@
     //Passing Web Context to Prechat - END
 
 </script>
-<script type='text/javascript' src='https://beautynet--agentbot.sandbox.my.site.com/ESWSephoraServiceHelper1774355936348/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<script type='text/javascript' src='https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSG1775405801968/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 </body>
 </html>
