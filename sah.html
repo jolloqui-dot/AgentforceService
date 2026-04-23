@@ -20,7 +20,7 @@
 	</ul>
 	
 <script type='text/javascript'>
-		function initEmbeddedMessaging() {
+	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
@@ -36,18 +36,6 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
-    //Passing Web Context to Prechat - BEGIN
-    //window.addEventListener("onEmbeddedMessagingReady", e => {
-    //    console.log("onEmbeddedMessagingReady event triggered");  //log event
-
-        //Set invisible prechat field
-    //    embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 
-	//		"Pays" : "FR"
-	//	});
-				
-	//});
-    //Passing Web Context to Prechat - END
-
 </script>
 <script type='text/javascript' src='https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSG1775405801968/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
