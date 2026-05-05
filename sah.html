@@ -23,7 +23,7 @@
 			<li><p>No variables </p></li>
 			<li><p>New Agent from Sephora </p></li>
 		</ul>
-		<li><p>v2.3 </p></li>
+		<li><p>v2.4 </p></li>
 		<ul>
 			<li><p>Added menu </p></li>
 			<li><p>New Agent from Sephora </p></li>
@@ -59,23 +59,6 @@
 		initESW('https://beautynet--agentbot.sandbox.my.salesforce.com');
 	}
 
-	
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-			embeddedservice_bootstrap.init(
-				'00DKI000000H1IP',
-				'FR_MSG_JOC',
-				'https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSGJOC1777378631365',
-				{
-					scrt2URL: 'https://beautynet--agentbot.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
 </script>
 <script type='text/javascript' src='https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSGJOC1777378631365/assets/js/bootstrap.min.js' ></script>
 
