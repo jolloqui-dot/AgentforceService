@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luna Enhanced Chat into Agentforce test</title>
+</head>
+<body>
+  <p>This is a simple test for Agentforce Service Agent,</p>
+	<p>now deployed</p>
+	<p>v1.0 </p>
 
+
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DKj00000BnwL0',
+				'LunaToECv2',
+				'https://jolloqui-241215-536-demo.my.site.com/ESWLunaToECv21778676664030',
+				{
+					scrt2URL: 'https://jolloqui-241215-536-demo.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://jolloqui-241215-536-demo.my.site.com/ESWLunaToECv21778676664030/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
+</body>
+</html>
