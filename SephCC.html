@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Seph Commerce Cloud</title>
+</head>
+<body>
+  <p>This is a simple test for Sephora Comerce CLoud Agent</p>
+	<ul>
+		<li><p>v1.0 working OK</p></li>
+		<ul>
+			<li><p>Hidden variable Commented out </p></li>
+			<li><p>Value FR added at Flow level </p></li>
+		</ul>
+	</ul>
+
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DKE000000LOhQ',
+				'FR_MSG_JOC',
+				'https://beautynet--aforce.sandbox.my.site.com/ESWFRMSGJOC1780912923746',
+				{
+					scrt2URL: 'https://beautynet--aforce.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://beautynet--aforce.sandbox.my.site.com/ESWFRMSGJOC1780912923746/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+</body>
+</html>
