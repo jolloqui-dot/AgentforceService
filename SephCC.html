@@ -13,6 +13,8 @@
 		</ul>
 	</ul>
 
+<button type="button" onclick="updateContextToken()">Update Post-Chat Token</button>
+	
 	<script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -46,17 +48,17 @@
     //Passing Web Context to Prechat - END
 
 	//Passing Web Context to Post-Chat - BEGIN  
-	window.addEventListener('onEmbeddedMessagingConversationStarted', function(event) {
-	    embeddedservice_bootstrap.utilAPI.setSessionContext([
-	        {
-	            name: 'SFRAAuthToken',
-	            value: {
-	                valueType: 'String',
-	                value: { 'Re-TokenABCDEFGH' }
-	            }
-	        }
-	    ]);
-	});
+	function updateContextToken() {
+		console.log("Updating SFRAAuthToken context variable...");
+		try {
+			embeddedservice_bootstrap.utilAPI.setContextVariables({
+				"SFRAAuthToken": "Re-TokenABCDEFGH"
+			});
+			console.log("Context variable updated successfully.");
+		} catch (err) {
+			console.error("Error setting context variables: ", err);
+		}
+	}
 	//Passing Web Context to Postchat - END  
 
 
