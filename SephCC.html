@@ -10,6 +10,7 @@
 		<li><p>v1.3 FR_MSG_JOC</p></li>
 		<ul>
 			<li><p>SFRAAuthToken as Hidden Variable "Token1234567890" </p></li>
+			<li><p>Adding button and context update "Re-TokenABCDEFGH" </p></li>
 		</ul>
 	</ul>
 
@@ -48,15 +49,26 @@
     //Passing Web Context to Prechat - END
 
 	//Passing Web Context to Post-Chat - BEGIN  
+	// FIX: Updated method to dynamically change context variables
 	function updateContextToken() {
-		console.log("Updating SFRAAuthToken context variable...");
+		console.log("Attempting to update SFRAAuthToken...");
 		try {
-			embeddedservice_bootstrap.utilAPI.setContextVariables({
-				"SFRAAuthToken": "Re-TokenABCDEFGH"
-			});
-			console.log("Context variable updated successfully.");
+			// Check if the modern site API structure is available
+			if (embeddedservice_bootstrap.siteAPI && typeof embeddedservice_bootstrap.siteAPI.setContextParameters === "function") {
+				embeddedservice_bootstrap.siteAPI.setContextParameters({
+					"SFRAAuthToken": "Re-TokenABCDEFGH"
+				});
+				console.log("Context updated via siteAPI.");
+			} 
+			// Fallback: Directly updating the settings object (often picked up on deployment state changes)
+			else {
+				embeddedservice_bootstrap.settings.context = {
+					"SFRAAuthToken": "Re-TokenABCDEFGH"
+				};
+				console.log("Context updated via settings fallback. Note: This applies to subsequent conversations/events.");
+			}
 		} catch (err) {
-			console.error("Error setting context variables: ", err);
+			console.error("Failed to update context variables: ", err);
 		}
 	}
 	//Passing Web Context to Postchat - END  
