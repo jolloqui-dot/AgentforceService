@@ -45,6 +45,21 @@
 	});
     //Passing Web Context to Prechat - END
 
+	//Passing Web Context to Post-Chat - BEGIN  
+	window.addEventListener('onEmbeddedMessagingConversationStarted', function(event) {
+	    embeddedservice_bootstrap.utilAPI.setSessionContext([
+	        {
+	            name: 'SFRAAuthToken',
+	            value: {
+	                valueType: 'String',
+	                value: { 'Re-TokenABCDEFGH' }
+	            }
+	        }
+	    ]);
+	});
+	//Passing Web Context to Postchat - END  
+
+
 	</script>
 	<script type='text/javascript' src='https://beautynet--aforce.sandbox.my.site.com/ESWFRMSGJOC1780913633148/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
