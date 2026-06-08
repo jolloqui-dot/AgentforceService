@@ -30,6 +30,21 @@
 			console.error('Error loading Embedded Messaging: ', err);
 		}
 	};
+
+
+
+	//Passing Web Context to Prechat - BEGIN  
+    window.addEventListener("onEmbeddedMessagingReady", e => {
+        console.log("onEmbeddedMessagingReady event triggered");  //log event
+        
+        //Set invisible prechat field
+        embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 
+			"SFRAAuthToken" : "Token1234567890"  
+		});		//for new hidden variables, add with a comma
+
+	});
+    //Passing Web Context to Prechat - END
+
 	</script>
 	<script type='text/javascript' src='https://beautynet--aforce.sandbox.my.site.com/ESWFRMSGJOC1780913633148/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
