@@ -9,8 +9,8 @@
 	<ul>
 		<li><p>v1.3 Session_Vars_Test</p></li>
 		<ul>
-			<li><p>SFRAAuthToken as Hidden Variable "Token1234567890" </p></li>
-			<li><p>CCSessionToken as Hidden Variable "nada" initially </p></li>
+			<li><p>SFRAAuthToken as Hidden Variable "nada" </p></li>
+			<li><p>CCSessionToken as Hidden Variable "SessionId1234567" initially </p></li>
 			<li><p>Adding button and context update "Re-TokenABCDEFGH" </p></li>
 		</ul>
 	</ul>
@@ -40,8 +40,8 @@
         
         //Set invisible prechat field
         embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ 
-			"SFRAAuthToken" : "Token1234567890", 
-			"CCSessionToken" : "nada"  
+			"SFRAAuthToken" : "nada", 
+			"CCSessionToken" : "SessionId1234567"  
 		});		//for new hidden variables, add with a comma
 
 	});
