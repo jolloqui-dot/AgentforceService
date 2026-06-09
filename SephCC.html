@@ -14,8 +14,6 @@
 			<li><p>Adding button and context update "Re-TokenABCDEFGH" </p></li>
 		</ul>
 	</ul>
-
-<button type="button" onclick="updateContextToken()">Update Post-Chat Token</button>
 	
 	<script type='text/javascript'>
 	function initEmbeddedMessaging() {
@@ -48,31 +46,6 @@
 
 	});
     //Passing Web Context to Prechat - END
-
-	//Passing Web Context to Post-Chat - BEGIN  
-	// FIX: Updated method to dynamically change context variables
-	function updateContextToken() {
-		console.log("Attempting to update SFRAAuthToken...");
-		try {
-			// Check if the modern site API structure is available
-			if (embeddedservice_bootstrap.siteAPI && typeof embeddedservice_bootstrap.siteAPI.setContextParameters === "function") {
-				embeddedservice_bootstrap.siteAPI.setContextParameters({
-					"SFRAAuthToken": "Re-TokenABCDEFGH"
-				});
-				console.log("Context updated via siteAPI.");
-			} 
-			// Fallback: Directly updating the settings object (often picked up on deployment state changes)
-			else {
-				embeddedservice_bootstrap.settings.context = {
-					"SFRAAuthToken": "Re-TokenABCDEFGH"
-				};
-				console.log("Context updated via settings fallback. Note: This applies to subsequent conversations/events.");
-			}
-		} catch (err) {
-			console.error("Failed to update context variables: ", err);
-		}
-	}
-	//Passing Web Context to Postchat - END  
 
 
 	</script>
