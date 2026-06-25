@@ -9,54 +9,28 @@
   <p>This is a simple test for Sephora Service Helper</p>
 	<ul>
 		<li><p>v1.0 working OK</p></li>
-		<ul>
-			<li><p>Hidden variable Commented out </p></li>
-			<li><p>Value FR added at Flow level </p></li>
-		</ul>
-		<li><p>v1.1 working OK</p></li>
-		<ul>
-			<li><p>Hidden variable : Pays = FR </p></li>
-			<li><p>Mapped into flow's Country </p></li>
-		</ul>
-		<li><p>v2.1 </p></li>
-		<ul>
-			<li><p>No variables </p></li>
-			<li><p>New Agent from Sephora </p></li>
-		</ul>
-		<li><p>v2.6 </p></li>
-		<ul>
-			<li><p>Added menu </p></li>
-			<li><p>New Agent from Sephora </p></li>
-		</ul>
 	</ul>
 
-<script type='text/javascript' src='https://beautynet--agentbot.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js'></script>
 <script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		// Required if you want labels in a language that’s different from your user’s context.
-		//embedded_svc.menu.settings.language = ''; //For example, enter 'en' or 'en-US'
-		embedded_svc.menu.settings.scrt2BaseUrl = 'https://beautynet--agentbot.sandbox.my.salesforce-scrt.com';
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-		embedded_svc.menu.init(
-			'https://beautynet--agentbot.sandbox.my.salesforce.com',
-			'https://d.la1-c1cs-am3.salesforceliveagent.com/chat',
-			gslbBaseURL,
-			'00DKI000000H1IP',
-			'CM_FR_V2'
-		);
+			embeddedservice_bootstrap.init(
+				'00DKI000000H1IP',
+				'FR_MSG_JOC',
+				'https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSGJOC1777378631365',
+				{
+					scrt2URL: 'https://beautynet--agentbot.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
 	};
-
-	if (!window.embedded_svc || !window.embedded_svc.menu) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://beautynet--agentbot.sandbox.my.salesforce.com/embeddedservice/menu/fab.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://beautynet--agentbot.sandbox.my.salesforce.com');
-	}
 </script>
+<script type='text/javascript' src='https://beautynet--agentbot.sandbox.my.site.com/ESWFRMSGJOC1777378631365/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+	
 
 </body>
 </html>
